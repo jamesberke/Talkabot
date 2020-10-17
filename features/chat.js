@@ -4,6 +4,7 @@
  */
 const express = require('express');
 const path = require('path');
+const rawData = require('./src/rawData')
 
 module.exports = function(controller) {
 
