@@ -71,31 +71,3 @@ module.exports = {
     openToJob: true
   }
 }
-
-// // projects
-// module.exports = [
-//   {
-//     name: "yelp clone",
-//     url: "",
-//     languages: ['javascript', 'ruby']
-//   },
-//   {
-//     name: "yelp",
-//     url: "",
-//     languages: ['javascript', 'ruby']
-//   },
-
-// ]
-// // laguange: javascript 
-
-// //languages
-// module.exports = {
-//   1: {
-//     id: 1,
-//     name: 'javascript'
-//   },
-//   2: {
-//     id: 2,
-//     name: 'python'
-//   },
-// }
