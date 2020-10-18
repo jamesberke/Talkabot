@@ -361,11 +361,18 @@ var Botkit = {
         that.replies = document.getElementById('message_replies');
 
         // add click event for FAQs
-        const FAQs = document.querySelector('#chat-FAQ');
-        FAQs.addEventListener('click', (e)=>{
-            e.preventDefault()
-            that.quickReply(e.target.innerHTML)
-        })
+        // class=""
+        const FAQs = document.getElementsByClassName('chat-FAQ-li');
+
+        for(let i = 0; i < FAQs.length; i++){
+            const li = FAQs[i];
+            li.addEventListener('click', (e)=>{
+                console.log('clicked')
+                e.preventDefault()
+                that.quickReply(e.target.innerHTML)
+            })
+
+        }
 
         that.input = document.getElementById('messenger_input');
 
