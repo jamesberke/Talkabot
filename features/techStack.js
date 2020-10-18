@@ -3,6 +3,13 @@ const { listOfProjects } = require('./src/projects')
 const { firstName } = rawData.contactInformation
 const { listOfLanguages, listOfTechnologies } = rawData.techStack
 const listTechStacks = [...listOfLanguages.map(el => el.name), ...listOfTechnologies.map(el => el.name)]
+const listTechStackObjs = [...listOfLanguages.map(el => ({
+  title: el.name,
+  payload: el.name
+})), ...listOfTechnologies.map(el => ({
+  title: el.name,
+  payload: el.name
+}))]
 
 module.exports = function (controller) {
   // // use a function to match a condition in the message
@@ -26,29 +33,7 @@ module.exports = function (controller) {
       });
       await bot.reply(message, {
         text: `Would you like to see ${firstName}'s projects related to the specific technology?`,
-        quick_replies: [{
-            title: 'JavaScript',
-            payload: 'JavaScript',
-          },
-          {
-            title: 'Python',
-            payload: 'Python',
-          },
-          {
-            title: 'Ruby',
-            payload: 'Ruby',
-          },
-          {
-            title: 'HTML',
-            payload: 'HTML',
-          }, {
-            title: 'CSS',
-            payload: 'CSS',
-          }, {
-            title: 'SQL',
-            payload: 'SQL'
-          }
-        ]
+        quick_replies: listTechStackObjs
       })
   });
 
