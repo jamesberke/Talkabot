@@ -18,6 +18,11 @@ module.exports = function(controller) {
 
     typing.addMessage('typed!','next_thread');
 
+    typing.say('I am going to type for a while now...');
+    typing.addAction('typing');
+    typing.addMessage({type: 'typing'}, 'typing');
+    
+
     // use the before handler to delay the next message 
     typing.before('next_thread',  async () => {
         return new Promise((resolve) => {
