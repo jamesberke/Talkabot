@@ -2,7 +2,7 @@ $action_color: orange;
 $background: #FFFFFF;
 $bot_message_background: #F0F0F0;
 $bot_message_text: #333;
-$human_message_background: $botkit_purple;
+$human_message_background: $botkit_pink;
 $human_message_text: white;
 
 #message_window {
@@ -182,17 +182,53 @@ $human_message_text: white;
       a {
          text-decoration: none;
          display: block;
-         border: 1px solid $botkit_purple;
-         color: $botkit_purple;
+         border: 1px solid $botkit_pink;
+         color: $botkit_pink;
          border-radius: 16px;
          padding: 0.25rem 1rem;
          font-size: 14px;
          cursor: pointer;
 
          &:hover {
-           background: $botkit_purple;
+           background: $botkit_pink;
            color: #FFF;
          }
+     }
+   }
+
+   #chat-FAQ {
+     text-align: center;
+     overflow-x: auto;
+     flex-shrink: 0;
+     -webkit-overflow-scrolling: touch;
+     /* Lets it scroll lazy */
+
+     ul {
+       list-style-type: none;
+       margin: 0px auto;
+       padding: 0;
+
+       li {
+         display: inline-block;
+         margin: 0.5rem;
+         margin-left: 0;
+       }
+     }
+
+     a {
+       text-decoration: none;
+       display: block;
+       border: 1px solid $botkit_pink;
+       color: $botkit_pink;
+       border-radius: 16px;
+       padding: 0.25rem 1rem;
+       font-size: 14px;
+       cursor: pointer;
+
+       &:hover {
+         background: $botkit_pink;
+         color: #FFF;
+       }
      }
    }
 }

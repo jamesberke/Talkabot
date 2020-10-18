@@ -1,4 +1,4 @@
-$botkit_purple: #a795ef;
+$botkit_pink: #e83e8c;
 @mixin clearfix {
     &:after {
         content: "";
@@ -24,7 +24,11 @@ html {
     @include clearfix;
     position: relative;
     max-width: 1000px;
-    margin: 0 auto;
+    // margin: 0 auto;
+    // height: calc(100vh - 62.75px);
+    height: 100vh;
+    padding-top: 67.25;
+    box-sizing: border-box;
 }
 
 .box {
@@ -56,7 +60,7 @@ footer {
 }
 
 a {
-    color: $botkit_purple;
+    color: $botkit_pink;
 }
 
 .copyurl {
@@ -99,7 +103,7 @@ div.input {
 
         &:hover {
             background: #FFF;
-            color: $botkit_purple;
+            color: $botkit_pink;
         }
     }
 }
@@ -112,7 +116,7 @@ div.hr {
 }
 
 a.button {
-    border: 2px solid $botkit_purple;
+    border: 2px solid $botkit_pink;
     font-weight: bold;
     // font-size: 4rem;
     margin: 0;
@@ -127,7 +131,7 @@ a.button {
     transition: box-shadow 0.1s linear;
 
     &:hover {
-        // background-color: rgba($botkit_purple, 0.1);
+        // background-color: rgba($botkit_pink, 0.1);
         box-shadow: 1px 1px 5px rgba(0,0,0,0.1);
     }
 }

@@ -1,6 +1,18 @@
 /* shared botkit ui styles */
 * {
   box-sizing: border-box;
+  font-family: -apple-system,
+  BlinkMacSystemFont,
+  "Segoe UI",
+  Roboto,
+  "Helvetica Neue",
+  Arial,
+  "Noto Sans",
+  sans-serif,
+  "Apple Color Emoji",
+  "Segoe UI Emoji",
+  "Segoe UI Symbol",
+  "Noto Color Emoji"
 }
 
 body,
@@ -11,18 +23,32 @@ html {
   background-color: #FFF;
   font-family: "helvetica", sans-serif;
 }
+.main{
+  display: flex;
+  height: 100vh;
+  padding-top: 53.25px;
+}
+.left-panel {
+  width: 30%;
+  border-left: 1px solid #CCC;
+}
 
 .wrapper {
+  width: 70%;
   position: relative;
   max-width: 1000px;
-  margin: 0 auto;
+  /* margin: 0 auto; */
+  box-sizing: border-box;
 }
 .wrapper:after {
   content: "";
   display: table;
   clear: both;
 }
-
+button:focus {
+  outline: none;
+  box-shadow: none;
+}
 .box {
   border: 2px solid #CCC;
   padding: 1rem calc(1rem - 2px);
@@ -53,7 +79,7 @@ footer {
 }
 
 a {
-  color: #a795ef;
+  color: #e83e8c;
 }
 
 .copyurl {
@@ -179,8 +205,13 @@ a.button:hover {
   clear: both;
 }
 #message_window footer {
-  border-top: 1px solid #CCC;
-  padding: 0.25rem;
+  /* border-top: 1px solid #CCC; */
+  /* padding: 0.25rem; */
+  border-radius: 0.3rem;
+  /* border-top: 1px solid #CCC; */
+  padding: 0.2rem;
+  margin: 1rem;
+  border: 1px solid #ccc;
 }
 #message_window footer input[type=text] {
   flex-grow: 1;
@@ -193,7 +224,7 @@ a.button:hover {
   background: none;
   border: 0;
   cursor: pointer;
-  color: blue;
+  color: #17a2b8;
   font-weight: bold;
 }
 #message_window form {
@@ -247,7 +278,7 @@ a.button:hover {
 }
 #message_window .message.outgoing {
   float: right;
-  background: #a795ef;
+  background: #e83e8c;
   color: white;
 }
 #message_window #message_replies {
@@ -270,15 +301,51 @@ a.button:hover {
 #message_window #message_replies a {
   text-decoration: none;
   display: block;
-  border: 1px solid #a795ef;
-  color: #a795ef;
-  border-radius: 16px;
+  border: 1px solid #e83e8c80;
+  color: #e83e8c;
+  border-radius: 12px;
   padding: 0.25rem 1rem;
   font-size: 14px;
   cursor: pointer;
 }
 #message_window #message_replies a:hover {
-  background: #a795ef;
+  background: #e83e8c;
+  color: #FFF;
+}
+
+#message_window #message_replies {
+  text-align: center;
+  overflow-x: auto;
+  flex-shrink: 0;
+  -webkit-overflow-scrolling: touch;
+  /* Lets it scroll lazy */
+}
+
+#chat-FAQ ul {
+  list-style-type: none;
+  margin: 0px auto;
+  padding: 0;
+}
+
+#chat-FAQ ul li {
+  display: inline-block;
+  margin: 0.5rem;
+  margin-left: 0;
+}
+
+#chat-FAQ a {
+  text-decoration: none;
+  display: block;
+  border: 1px solid #e83e8c80;
+  color: #e83e8c;
+  border-radius: 12px;
+  padding: 0.25rem 1rem;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+#chat-FAQ a:hover {
+  background: #e83e8c;
   color: #FFF;
 }
 

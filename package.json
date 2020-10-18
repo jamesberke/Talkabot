@@ -14,5 +14,8 @@
     "botkit-plugin-cms": "^1.0.3",
     "dotenv": "^7.0.0",
     "nodemon": "^2.0.5"
+  },
+  "devDependencies": {
+    "eslint": "^7.11.0"
   }
 }
