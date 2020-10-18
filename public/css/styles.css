@@ -31,13 +31,14 @@ html {
 .left-panel {
   width: 30%;
   border-left: 1px solid #CCC;
+  margin-left: auto;
 }
 
 .wrapper {
   width: 70%;
   position: relative;
-  max-width: 1000px;
-  /* margin: 0 auto; */
+  max-width: 800px;
+  margin-right: auto;
   box-sizing: border-box;
 }
 .wrapper:after {
