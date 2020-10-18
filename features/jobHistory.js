@@ -52,9 +52,19 @@ module.exports = function (controller) {
 
       await bot.reply(message, { type: 'typing' });
 
+      setTimeout(async () => {
+        await bot.changeContext(message.reference);
+        await bot.reply(message, {
+          text: `I have ${listOfCompanies.length} relavent work experiences. Which would you like to know more about?`,
+          quick_replies: listOfCompanies.map(company => {
+            return {
+              title: company.companyName,
+              payload: company.companyName
+            }
+          })
+        })
+      }, 1000);
       
-      
-
       controller.hears(jobNames, ['message','direct_message'], async function(bot, message) {
         let mainCompany = listOfCompanies.filter(company => company.companyName === message.text);
         await bot.reply(message, { type: 'typing' });
@@ -75,22 +85,7 @@ module.exports = function (controller) {
             text: `<div>I ${mainCompany[0].jobDescription}.</div>`
           });
         }, 3000);
-      });
-
-      setTimeout(async () => {
-        await bot.changeContext(message.reference);
-        await bot.reply(message, {
-          text: `I have ${listOfCompanies.length} relavent work experiences. Which would you like to know more about?`,
-          quick_replies: listOfCompanies.map(company => {
-            return {
-              title: company.companyName,
-              payload: company.companyName
-            }
-          })
-        })
-      }, 1000);
-
-      
+      }); 
       
     }
   });
