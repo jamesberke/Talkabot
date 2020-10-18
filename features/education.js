@@ -23,7 +23,12 @@ module.exports = function (controller) {
     const appAcademy = education.find(school => school.institutionName === 'App Academy');
     const aAreply = parseDescription(appAcademy)
     await bot.reply(message, aAreply);
-  
+  });
+
+  controller.hears('City College of San Francisco', ['message', 'direct_message'], async (bot, message) => {
+    const cityCollege = education.find(school => school.institutionName === 'City College of San Francisco');
+    const cCreply = parseDescription(appAcademy)
+    await bot.reply(message, cCreply);
   });
 
   const listEducation = function (schools) {
