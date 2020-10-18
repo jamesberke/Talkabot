@@ -8,19 +8,23 @@ module.exports = function (controller) {
 
     if (listOfCompanies.length === 1) {
       
+      await bot.reply(message, {type: 'typing'});
+
       setTimeout(async() => {
         await bot.changeContext(message.reference);
         await bot.reply(message, {
           text: `${listOfCompanies.map(company => `<div>I have worked at ${company.companyName} 
           as a ${company.jobTitle} from ${company.startDate} to ${company.endDate}.</div>`)}`
         });
-      }, 1000);
+        await bot.reply(message, {type: 'typing'});
+      }, 1000)
   
       setTimeout(async() => {
         await bot.changeContext(message.reference);
         await bot.reply(message, {
           text: `${listOfCompanies.map(company => `<div>I ${company.jobDescription}.</div>`)}`
         });
+        await bot.reply(message, {type: 'typing'});
       }, 2000)
   
       setTimeout(async() => {
