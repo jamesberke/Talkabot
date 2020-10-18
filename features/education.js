@@ -4,8 +4,11 @@ const rawData = require('./src/rawData')
 
 module.exports = function (controller) {
 
-  let convo = new BotkitConversation('educationDialogue', controller);
   const education = rawData.education.listOfInsitutions;
+
+// initial interaction with education branch of resume chatbot
+// uses listEducation() function to parse schools like a human would write
+// use quick reply as "guide" for user to know what to do next
 
   controller.hears(['education', 'school'], ['message','direct_message'], async (bot, message) => {
     const initialReply = listEducation(education);
@@ -23,6 +26,8 @@ module.exports = function (controller) {
     })
   });
 
+// dialogue branch for app academy initial info and main description
+// uses 'no' quick reply as bootleg transition to a menu sequence
   controller.hears('App Academy', ['message', 'direct_message'], async (bot, message) => {
     const appAcademy = education.find(school => school.institutionName === 'App Academy');
     const aAreply = parseDescription(appAcademy)
@@ -44,6 +49,8 @@ module.exports = function (controller) {
     }) 
    });
 
+// dialogue branch foro City College initial info and main description
+// uses 'no' quick reply as bootleg transition to a menu sequence
   controller.hears('City College of San Francisco', ['message', 'direct_message'], async (bot, message) => {
     const cityCollege = education.find(school => school.institutionName === 'City College of San Francisco');
     const cCreply = parseDescription(cityCollege)
@@ -65,7 +72,8 @@ module.exports = function (controller) {
     })
   });
 
-
+// bootleg transition until we figure out how to use conversations
+// allows for an easy route back to new information
   controller.hears('transitionSeq', ['message', 'direct_message'], async (bot, message) => {
     await bot.reply(message, {
       text: 'What else can I help you with?',
@@ -79,14 +87,17 @@ module.exports = function (controller) {
       },
       {
         title: 'Contact Info',
-        payload: ''
+        payload: 'Contact'
+      },
+      {
+        title: 'Tell Me About Yourself',
+        payload: 'SelfPitch'
       }]
     })
   });
 
-
-
-
+// Parse schools into string listing attended schools
+// additional logic to make it sound natural and grammatically correct
   const listEducation = function (schools) {
     const schoolNames = schools.map(school => school.institutionName)
 
@@ -98,10 +109,14 @@ module.exports = function (controller) {
     }
   };
 
+// returns main description followed by timeline
   const parseDescription = function (school) {
-    return `${school.description} I attended for ${getLengthAtSchool(school.startDate, school.endDate)} and graduated in ${school.endDate[1]}`
+    return `${school.description} I attended for 
+            ${getLengthAtSchool(school.startDate, school.endDate)} 
+            and graduated in ${school.endDate[1]}`
   };
 
+// helper function to make timeline more dynamic
   const getLengthAtSchool = function (startDate, endDate) {
     const monthsWorking = 12 - (startDate[0] - endDate[0]);
     let yearsWorking = endDate[1] - startDate[1];
@@ -116,8 +131,44 @@ module.exports = function (controller) {
       return `${monthsWorking} months`;
     };
   }
+  
+  // const ed_dialog = new BotkitConversation('ed_dialog', controller);
 
+  // const initialReply = listEducation(education);
 
+  // ed_dialog.say(`${initialReply}`);
+  // ed_dialog.ask('Would you like to learn more about one of these schools?', [
+  //   {
+  //     pattern: 'Yes',
+  //     handler: async function (answer, convo, bot) {
+  //       await bot.reply(message, {
+  //         text: 'Please pick a school',
+  //         quick_replies:[{
+  //           title: 'App Academy',
+  //           payload: 'App Academy'
+  //         },
+  //         {
+  //           title: 'City College of San Francisco',
+  //           payload: 'City College of San Francisco'
+  //         }]
+  //       })
+  //     }
+  //   },
+  //   {
+  //     pattern: 'no',
+  //     handler: async function (answer, convo, bot) {
+  //       await convo.gotoThread('hates_life');
+  //     }
+  //   }
+  // ], { key: 'tacos' });
+
+  // // Add the dialog to the Botkit controller
+  // controller.addDialog(ed_dialog);
+
+  // // Later on, trigger the dialog into action!
+  // controller.on('message', async (bot, message) => {
+  //   if (message === 'education') await bot.beginDialog('ed_dialog');
+  // });
 }
 
 
