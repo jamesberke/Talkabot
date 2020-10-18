@@ -351,7 +351,6 @@ var Botkit = {
 
         var that = this;
 
-
         that.message_window = document.getElementById("message_window");
 
         that.message_list = document.getElementById("message_list");
@@ -360,6 +359,13 @@ var Botkit = {
         that.message_template = Handlebars.compile(source);
 
         that.replies = document.getElementById('message_replies');
+
+        // add click event for FAQs
+        const FAQs = document.querySelector('#chat-FAQ');
+        FAQs.addEventListener('click', (e)=>{
+            e.preventDefault()
+            that.quickReply(e.target.innerHTML)
+        })
 
         that.input = document.getElementById('messenger_input');
 
@@ -397,8 +403,7 @@ var Botkit = {
         });
 
         that.on('message', function (message) {
-
-            console.log('RECEIVED MESSAGE', message);
+            // console.log('RECEIVED MESSAGE', message);
             that.renderMessage(message);
 
         });
