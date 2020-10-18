@@ -25,7 +25,7 @@ module.exports = function (controller) {
       await bot.reply(message, {
         text: `${listOfInsitutions.map(school =>
           `<div>- <strong>${school.institutionName}:
-        </strong>${school.degree} (${school.startDate[1]} - ${school.endDate[1]})</div>`)
+        </strong>${school.degree} (${school.startDate.slice(0,4)} - ${school.endDate.slice(0,4)})</div>`)
           .join('')}`
       });
       await bot.reply(message, { type: 'typing' });
