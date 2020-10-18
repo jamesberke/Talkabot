@@ -239,6 +239,7 @@ var Botkit = {
     },
     renderMessage: function (message) {
         var that = this;
+
         if (!that.next_line) {
             that.next_line = document.createElement('div');
             that.message_list.appendChild(that.next_line);
@@ -247,9 +248,17 @@ var Botkit = {
             message.html = converter.makeHtml(message.text);
         }
 
-        that.next_line.innerHTML = that.message_template({
-            message: message
-        });
+        if (message.type === 'outgoing') {
+            that.next_line.innerHTML = that.message_template({
+                message: message
+            });
+        } else {
+            const iconSpan = `<span style="display:flex; alignItems: center; width: 30px; height: 30px"><img style="width: 100%; height: 100%" src="./assets/chatbot2.png"/></span>`
+            const formattedMessage = that.message_template({ message })
+            const outerDiv = `<div style="display: flex">${iconSpan}${formattedMessage} </div>`
+            that.next_line.innerHTML = outerDiv
+        }
+
         if (!message.isTyping) {
             delete (that.next_line);
         }
