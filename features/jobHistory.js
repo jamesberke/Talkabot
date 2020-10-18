@@ -25,7 +25,7 @@ module.exports = function (controller) {
           text: `${listOfCompanies.map(company => `<div>I ${company.jobDescription}.</div>`)}`
         });
         await bot.reply(message, {type: 'typing'});
-      }, 2000)
+      }, 3000)
   
       setTimeout(async() => {
         await bot.changeContext(message.reference);
@@ -46,19 +46,27 @@ module.exports = function (controller) {
               }
           ]
         })
-      }, 3000)
+      }, 5000)
     } else {
       let jobNames = [...listOfCompanies.map(company => company.companyName)]
 
+      await bot.reply(message, { type: 'typing' });
+
+      
+      
+
       controller.hears(jobNames, ['message','direct_message'], async function(bot, message) {
         let mainCompany = listOfCompanies.filter(company => company.companyName === message.text);
+        await bot.reply(message, { type: 'typing' });
 
         setTimeout(async() => {
           await bot.changeContext(message.reference);
           await bot.reply(message, {
-            text: `<div>I have worked at ${mainCompany[0].companyName} 
-            as a ${mainCompany[0].jobTitle} from ${mainCompany[0].startDate} to ${mainCompany[0].endDate}.</div>`
+            text: `<div>I worked at ${mainCompany[0].companyName} as a 
+              ${mainCompany[0].jobTitle} from ${mainCompany[0].startDate.slice(5,7)}/${mainCompany[0].startDate.slice(0,4)}
+               to ${mainCompany[0].endDate.slice(5, 7)}/${mainCompany[0].endDate.slice(0,4)}.</div>`
           });
+          await bot.reply(message, { type: 'typing' });
         }, 1000);
     
         setTimeout(async() => {
@@ -66,18 +74,24 @@ module.exports = function (controller) {
           await bot.reply(message, {
             text: `<div>I ${mainCompany[0].jobDescription}.</div>`
           });
-        }, 2000)
+        }, 3000);
       });
 
-      await bot.reply(message, {
-        text: `I have ${listOfCompanies.length} relavent work experiences. Which would you like to know more about?`,
-        quick_replies: listOfCompanies.map(company => {
-          return {
-            title: company.companyName,
-            payload: company.companyName
-          }
+      setTimeout(async () => {
+        await bot.changeContext(message.reference);
+        await bot.reply(message, {
+          text: `I have ${listOfCompanies.length} relavent work experiences. Which would you like to know more about?`,
+          quick_replies: listOfCompanies.map(company => {
+            return {
+              title: company.companyName,
+              payload: company.companyName
+            }
+          })
         })
-      })
+      }, 1000);
+
+      
+      
     }
   });
 

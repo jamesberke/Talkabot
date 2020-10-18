@@ -7,6 +7,13 @@ module.exports = {
         jobDescription: 'Built an interactive dashboard and implemented a fully responsive, device-agnostic front end web page using AngularJS, JavaScript, CSS flexbox, and media queries',
         startDate: '2020-05-25',
         endDate: '2020-09-15'
+      },
+      {
+        companyName: 'apple',
+        jobTitle: 'Software Engineer',
+        jobDescription: 'played with emojis all day',
+        startDate: '2016-05-25',
+        endDate: '2017-09-15'
       }
   ]
   },
@@ -16,15 +23,15 @@ module.exports = {
         institutionName: 'App Academy',
         degree: 'Software Engineer Certification',
         description: 'App Academy is a 4 month long, immersive, and full time software engineering course focused on training developers in popular web technologies and frameworks with an emphasis on communication and collaborative building.',
-        startDate: [12, 2019],
-        endDate: [04, 2020]
+        startDate: '2019-12-09',
+        endDate: '2020-04-06'
       },
       {
         institutionName: 'City College of San Francisco',
         degree: 'Associates Degree',
         description: 'lorem ipsum callem lodi',
-        startDate: [08, 2014],
-        endDate: [05, 2016]
+        startDate: '2014-08-12',
+        endDate: '2016-05-22'
       }
     ]
   },
