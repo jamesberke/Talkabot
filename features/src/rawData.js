@@ -13,19 +13,19 @@ module.exports = {
   education: {
     listOfInsitutions: [
       {
-        institutionName: '',
-        description: '',
-        startDate: '2020-05-25',
-        endDate: '2020-09-15'
+        institutionName: 'App Academy',
+        description: 'App Academy is a 4 month long, immersive, and full time software engineering course focused on training developers in popular web technologies and frameworks with an emphasis on communication and collaborative building.',
+        startDate: [12, 2019],
+        endDate: [04, 2020]
       },
       {
-        institutionName: '',
-        description: '',
-        startDate: '2020-05-25',
-        endDate: '2020-09-15'
+        institutionName: 'City College of San Francisco',
+        description: 'lorem ipsum callem lodi',
+        startDate: [08, 2014],
+        endDate: [05, 2016]
       }
     ]
-  },    
+  },
   techStack: {
     listOfLanguages: [
       {
@@ -40,6 +40,20 @@ module.exports = {
         name: 'Ruby',
         yearsCoding: '2'
       },
+      {
+        name: 'SQL',
+        yearsCoding: '3'
+      },
+      {
+        name: 'HTML',
+        yearsCoding: '2'
+      },
+      {
+        name: 'CSS',
+        yearsCoding: '2'
+      }
+    ],
+    listOfTechnologies: [
       {
         name: 'React.js',
         yearsCoding: '2'
@@ -57,9 +71,25 @@ module.exports = {
         yearsCoding: '1'
       },
       {
-        name: 'SQL',
-        yearsCoding: '3'
+        name: 'Express.js',
+        yearsCoding: '2'
       },
+      {
+        name: 'MongoDB',
+        yearsCoding: '2'
+      },
+      {
+        name: 'Ruby on Rails',
+        yearsCoding: '2'
+      },
+      {
+        name: 'Jest.js',
+        yearsCoding: '1'
+      },
+      {
+        name: 'PostgreSQL',
+        yearsCoding: '2'
+      }
     ]
   },
   contactInformation: {

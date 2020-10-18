@@ -1,4 +1,15 @@
 const rawData = require('./src/rawData')
+const { listOfProjects } = require('./src/projects')
+const { firstName } = rawData.contactInformation
+const { listOfLanguages, listOfTechnologies } = rawData.techStack
+const listTechStacks = [...listOfLanguages.map(el => el.name), ...listOfTechnologies.map(el => el.name)]
+const listTechStackObjs = [...listOfLanguages.map(el => ({
+  title: el.name,
+  payload: el.name
+})), ...listOfTechnologies.map(el => ({
+  title: el.name,
+  payload: el.name
+}))]
 
 module.exports = function (controller) {
   // // use a function to match a condition in the message
@@ -13,45 +24,28 @@ module.exports = function (controller) {
 
   // match any one of set of mixed patterns like a string, a regular expression
   controller.hears(['#techStack', new RegExp(/^TechStack/)], ['message', 'direct_message'], async function (bot, message) {
-      const {firstName} = rawData.contactInformation
-      const { listOfLanguages } = rawData.techStack
-      await bot.reply(message,{ text: "Here is the list of Henry's skills" });
+      await bot.reply(message,{ text: `Here is the list of <Strong>Henry's Tech Stack</Strong>` });
       await bot.reply(message, {
-        text: `${listOfLanguages.map(lang => `<div>- ${lang.name}: ${lang.yearsCoding} years</div>`).join('')}`
+        text: `<div><Strong>Languages</Strong></div>${listOfLanguages.map(lang => `<div>- ${lang.name}: ${lang.yearsCoding} years</div>`).join('')}`
       });
       await bot.reply(message, {
-        text: `Would you like to see ${firstName}'s projects related to the specific skill?`,
-        quick_replies: [{
-            title: 'JavaScript',
-            payload: 'JavaScript',
-          },
-          {
-            title: 'Python',
-            payload: 'Python',
-          },
-          {
-            title: 'Ruby',
-            payload: 'Ruby',
-          },
-          {
-            title: 'React.js',
-            payload: 'React.js',
-          }, {
-            title: 'Node.js',
-            payload: 'Node.js',
-          }, {
-            title: 'Vue.js',
-            payload: 'React.js',
-          }, {
-            title: 'Angular.js',
-            payload: 'Angular.js',
-          },{
-            title: 'SQL',
-            payload: 'SQL'
-          }
-        ]
+        text: `<div><Strong>Technologies</Strong></div>${listOfTechnologies.map(lang => `<div>- ${lang.name}: ${lang.yearsCoding} years</div>`).join('')}`
+      });
+      await bot.reply(message, {
+        text: `Would you like to see ${firstName}'s projects related to the specific technology?`,
+        quick_replies: listTechStackObjs
       })
-      // await bot.reply(message,{ text: 'I HEARD YOU TYPED TECHSTACK' });
+  });
+
+  controller.hears(listTechStacks, ['message'], async function (bot, message) {
+    const selectedProjects = listOfProjects.filter(project => project.technologies.includes(message.text))
+    await bot.reply(message, {
+      text: `Here is the list of the related projects`,
+    })
+    await bot.reply(message, {
+      text: `<div>${selectedProjects.map(project=>`<div>- <a href="${project.url}" target="_blank">${project.name}</a></div>`).join('')}</div>`
+    });
+
   });
 
 }
