@@ -27,7 +27,7 @@ module.exports = function (controller) {
 
   controller.hears('City College of San Francisco', ['message', 'direct_message'], async (bot, message) => {
     const cityCollege = education.find(school => school.institutionName === 'City College of San Francisco');
-    const cCreply = parseDescription(appAcademy)
+    const cCreply = parseDescription(cityCollege)
     await bot.reply(message, cCreply);
   });
 
@@ -52,7 +52,9 @@ module.exports = function (controller) {
 
     if (endDate[0] < startDate[0]) yearsWorking -= 1;
 
-    if (yearsWorking) {
+    if (yearsWorking === 1) {
+      return `${yearsWorking} year and ${monthsWorking} months`;
+    } else if (yearsWorking > 1) {
       return `${yearsWorking} years and ${monthsWorking} months`;
     } else {
       return `${monthsWorking} months`;
