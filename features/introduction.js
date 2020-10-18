@@ -7,7 +7,7 @@ module.exports = function(controller) {
         await bot.reply(message, `Hi there, my name is <strong>${firstName}</strong>`)
         await bot.reply(message, `${jobOpportunity}`)
         await bot.reply(message, { 
-            text: `To learn more about me, click one of the buttons below or type <strong>#Contact, #JobHistory, #Experience, #TechStack, etc.</strong>`,
+            text: `Get more information about ${firstName} by typing <strong>#Contact, #JobHistory, #Education, #TechStack, etc.</strong>`,
             quick_replies: [
                 {
                     title: 'Contact',
