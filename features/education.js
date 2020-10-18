@@ -84,8 +84,12 @@ module.exports = function (controller) {
         payload: 'Job History'
       },
       {
-        title: 'Technologies',
+        title: 'TechStack',
         payload: 'TechStack'
+      },
+      {
+        title: 'Education',
+        payload: 'Education'
       },
       {
         title: 'Contact Info',
