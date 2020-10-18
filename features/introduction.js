@@ -7,7 +7,7 @@ module.exports = function(controller) {
         await bot.reply(message, `Hi there, welcome to <strong>${firstName}</strong>'s ChatBot`)
         await bot.reply(message, `${jobOpportunity}`)
         await bot.reply(message, { 
-            text: `Get more information about ${firstName} by typing <strong>#Contact, #Job History, #Experience, #TechStack, etc.</strong>`,
+            text: `Get more information about ${firstName} by typing <strong>#Contact, #Job History, #Education, #TechStack, etc.</strong>`,
             quick_replies: [
                 {
                     title: 'Contact',

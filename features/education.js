@@ -11,11 +11,15 @@ module.exports = function (controller) {
     const initialReply = listEducation(education);
     await bot.reply(message, initialReply);
     await bot.reply(message, {
-            text: 'Would you like to learn more about one of these schools?',
-            quick_replies:[{title: 'App Academy',
-                            payload: 'App Academy'},
-                          {title: 'City College of San Francisco',
-                            payload: 'City College of San Francisco'}]
+      text: 'Would you like to learn more about one of these schools?',
+      quick_replies:[{
+        title: 'App Academy',
+        payload: 'App Academy'
+      },
+      {
+        title: 'City College of San Francisco',
+        payload: 'City College of San Francisco'
+      }]
     })
   });
 
@@ -23,13 +27,65 @@ module.exports = function (controller) {
     const appAcademy = education.find(school => school.institutionName === 'App Academy');
     const aAreply = parseDescription(appAcademy)
     await bot.reply(message, aAreply);
-  });
+    await bot.reply(message, {
+      text: 'Would you like to learn more?',
+      quick_replies: [{
+        title: 'App Academy',
+        payload: 'App Academy'
+      },
+      {
+        title: 'City College of San Francisco',
+        payload: 'City College of San Francisco'
+      },
+      {
+        title: 'No',
+        payload: 'transitionSeq'
+      }]
+    }) 
+   });
 
   controller.hears('City College of San Francisco', ['message', 'direct_message'], async (bot, message) => {
     const cityCollege = education.find(school => school.institutionName === 'City College of San Francisco');
     const cCreply = parseDescription(cityCollege)
     await bot.reply(message, cCreply);
+    await bot.reply(message, {
+      text: 'Would you like to learn more?',
+      quick_replies: [{
+        title: 'App Academy',
+        payload: 'App Academy'
+      },
+      {
+        title: 'City College of San Francisco',
+        payload: 'City College of San Francisco'
+      },
+      {
+        title: 'No',
+        payload: 'transitionSeq'
+      }]
+    })
   });
+
+
+  controller.hears('transitionSeq', ['message', 'direct_message'], async (bot, message) => {
+    await bot.reply(message, {
+      text: 'What else can I help you with?',
+      quick_replies: [{
+        title: 'Job History',
+        payload: 'Job History'
+      },
+      {
+        title: 'Technologies',
+        payload: 'TechStack'
+      },
+      {
+        title: 'Contact Info',
+        payload: ''
+      }]
+    })
+  });
+
+
+
 
   const listEducation = function (schools) {
     const schoolNames = schools.map(school => school.institutionName)
