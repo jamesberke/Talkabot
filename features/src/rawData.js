@@ -12,12 +12,14 @@ module.exports = {
     listOfInsitutions: [
       {
         institutionName: 'App Academy',
+        degree: 'Software Engineer Certification',
         description: 'App Academy is a 4 month long, immersive, and full time software engineering course focused on training developers in popular web technologies and frameworks with an emphasis on communication and collaborative building.',
         startDate: [12, 2019],
         endDate: [04, 2020]
       },
       {
         institutionName: 'City College of San Francisco',
+        degree: 'Associates Degree',
         description: 'lorem ipsum callem lodi',
         startDate: [08, 2014],
         endDate: [05, 2016]
