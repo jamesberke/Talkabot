@@ -7,7 +7,7 @@ module.exports = function(controller) {
         await bot.reply(message, `Hi there, welcome to <strong>${firstName}</strong>'s ChatBot`)
         await bot.reply(message, `${jobOpportunity}`)
         await bot.reply(message, { 
-            text: `Get more information about ${firstName} by typing <strong>#Contact, #Job History, #Education, #TechStack, etc.</strong>`,
+            text: `Get more information about ${firstName} by typing <strong>#Contact, #JobHistory, #Education, #TechStack, etc.</strong>`,
             quick_replies: [
                 {
                     title: 'Contact',
@@ -18,8 +18,8 @@ module.exports = function(controller) {
                     payload: 'Education',
                 },
                 {
-                    title: 'Job History',
-                    payload: 'Job History',
+                    title: 'JobHistory',
+                    payload: 'JobHistory',
                 },
                 {
                     title: 'TechStack',

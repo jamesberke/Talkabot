@@ -1,12 +1,14 @@
 module.exports = {
   jobHistory: {
-    listOfCompanies: [{
-      companyName: 'Storyworld International',
-      jobTitle: 'Software Engineer',
-      jobDescription: 'Built an interactive dashboard and implemented a fully responsive, device-agnostic front end web page using AngularJS, JavaScript, CSS flexbox, and media queries',
-      startDate: '2020-05-25',
-      endDate: '2020-09-15'
-    }]
+    listOfCompanies: [
+      {
+        companyName: 'Storyworld International',
+        jobTitle: 'Software Engineer',
+        jobDescription: 'Built an interactive dashboard and implemented a fully responsive, device-agnostic front end web page using AngularJS, JavaScript, CSS flexbox, and media queries',
+        startDate: '2020-05-25',
+        endDate: '2020-09-15'
+      }
+  ]
   },
   education: {
     listOfInsitutions: [
