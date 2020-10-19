@@ -1,4 +1,3 @@
-const { BotkitConversation } = require("botkit");
 const rawData = require("./src/rawData")
 
 module.exports = function (controller) {

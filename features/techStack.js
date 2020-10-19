@@ -26,7 +26,11 @@ module.exports = function (controller) {
   // }
 
   // match any one of set of mixed patterns like a string, a regular expression
-  controller.hears(['#techStack', new RegExp(/^TechStack/)], ['message', 'direct_message'], async function (bot, message) {
+  controller.hears(['#techStack', 
+                    new RegExp(/^TechStack/), 
+                    'technologies',
+                    'frameworks',
+                    'projects'], ['message', 'direct_message'], async function (bot, message) {
 
     await bot.reply(message, { type: 'typing' });
 
@@ -83,6 +87,10 @@ module.exports = function (controller) {
         quick_replies: [{
           title: "Let's move on",
           payload: "Let's move on"
+        },
+        {
+          title: 'other projects',
+          payload: 'projects'
         }]
       });
     }, 3000);

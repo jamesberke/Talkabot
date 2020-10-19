@@ -29,14 +29,14 @@ module.exports = function (controller) {
 
         setTimeout(async () => {
             await bot.changeContext(message.reference);
-            await bot.reply(message, { text: `Portfolio: <Strong><a href='${portfolioURL}' target='_blank'>${portfolioURL}</a></Strong>` });
+            await bot.reply(message, { text: `Portfolio: <a href="${portfolioURL}" target="_blank">${portfolioURL}</a>` });
             await bot.reply(message, { type: 'typing' });
         }, 4000);
 
         setTimeout(async () => {
             await bot.changeContext(message.reference);
             await bot.reply(message, {
-                text: `LinkedIn: <Strong><a href='${linkedInURL}' target='_blank'>${linkedInURL}</a></Strong>`,
+                text: `LinkedIn: <a href="${linkedInURL}" target="_blank">${linkedInURL}</a>`,
                 quick_replies: [{
                     title: "Let's move on",
                     payload: "Let's move on"
