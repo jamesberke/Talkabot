@@ -32,7 +32,7 @@ module.exports = function (controller) {
 
     setTimeout(async () => {
       await bot.changeContext(message.reference);
-      await bot.reply(message, { text: `Here is the list of <Strong>Henry's Tech Stack</Strong>` });
+      await bot.reply(message, { text: `Here is the list of <Strong>My Known Technologies</Strong>` });
       await bot.reply(message, { type: 'typing' });
     }, 1000);
 
@@ -55,7 +55,7 @@ module.exports = function (controller) {
     setTimeout(async () => {
       await bot.changeContext(message.reference);
       await bot.reply(message, {
-        text: `Would you like to see ${firstName}'s projects related to the specific technology?`,
+        text: `Would you like to see my projects related to a specific technology?`,
         quick_replies: listTechStackObjs
       })
     }, 6000);
@@ -71,7 +71,7 @@ module.exports = function (controller) {
     setTimeout(async () => {
       await bot.changeContext(message.reference);
       await bot.reply(message, {
-        text: `Here is the list of the related projects`,
+        text: `Here is a list of my related projects`,
       })
       await bot.reply(message, { type: 'typing' });
     }, 1000);

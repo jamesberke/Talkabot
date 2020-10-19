@@ -19,7 +19,7 @@ module.exports = function (controller) {
           as a ${company.jobTitle} from ${company.startDate} to ${company.endDate}.</div>`)}`
         });
         await bot.reply(message, {type: 'typing'});
-      }, 1000)
+      }, 1000);
   
       setTimeout(async() => {
         await bot.changeContext(message.reference);
@@ -27,7 +27,7 @@ module.exports = function (controller) {
           text: `${listOfCompanies.map(company => `<div>I ${company.jobDescription}.</div>`)}`
         });
         await bot.reply(message, {type: 'typing'});
-      }, 3000)
+      }, 3000);
   
       setTimeout(async() => {
         await bot.changeContext(message.reference);
@@ -48,7 +48,7 @@ module.exports = function (controller) {
               }
           ]
         })
-      }, 5000)
+      }, 5000);
     } else {
 
       await bot.reply(message, { type: 'typing' });
