@@ -1,32 +1,48 @@
 const { BotkitConversation } = require("botkit");
 const rawData = require('./src/rawData')
-const { contactInformation } = rawData.contactInformation;
+const { email, phone, portfolioURL, linkedInURL, firstName, lastName } = rawData.contactInformation;
 
 
 module.exports = function (controller) {
 
-    controller.hears('conact', ['message', 'direct_message'], async (bot, message) => {
+    controller.hears(['contact', 
+                        'email', 
+                        'phone', 
+                        'name', 
+                        'portfolio'], ['message', 'direct_message'], async (bot, message) => {
+        const myName = `${firstName} ${lastName}`
+        
 
         await bot.reply(message, { type: 'typing' });
 
         setTimeout(async () => {
             await bot.changeContext(message.reference);
+            await bot.reply(message, { text: `Phone: <Strong>${phone}</Strong>` });
+            await bot.reply(message, { type: 'typing' });
+        }, 1000);
+
+        setTimeout(async () => {
+            await bot.changeContext(message.reference);
+            await bot.reply(message, { text: `Email: <Strong>${email}</Strong>` });
+            await bot.reply(message, { type: 'typing' });
+        }, 2000);
+
+        setTimeout(async () => {
+            await bot.changeContext(message.reference);
+            await bot.reply(message, { text: `Portfolio: <Strong><a href='${portfolioURL}' target='_blank'>${portfolioURL}</a></Strong>` });
+            await bot.reply(message, { type: 'typing' });
+        }, 4000);
+
+        setTimeout(async () => {
+            await bot.changeContext(message.reference);
             await bot.reply(message, {
-                text: 'Would you like to learn more about one of these schools?',
+                text: `LinkedIn: <Strong><a href='${linkedInURL}' target='_blank'>${linkedInURL}</a></Strong>`,
                 quick_replies: [{
-                    title: 'App Academy',
-                    payload: 'App Academy'
-                },
-                {
-                    title: 'City College of San Francisco',
-                    payload: 'City College of San Francisco'
-                },
-                {
                     title: "Let's move on",
                     payload: "Let's move on"
                 }]
             });
-        }, 1000);
+        }, 6000);
 
     });
     

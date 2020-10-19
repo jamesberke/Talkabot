@@ -116,7 +116,7 @@ module.exports = function (controller) {
 
 // bootleg transition until we figure out how to use conversations
 // allows for an easy route back to new information
-  controller.hears(["Let's move on", 'lets move on', 'help'], ['message', 'direct_message'], async (bot, message) => {
+  controller.hears(["Let's move on", 'lets move on', 'help', 'stop'], ['message', 'direct_message'], async (bot, message) => {
 
     await bot.reply(message, { type: 'typing' });
 
