@@ -1,7 +1,7 @@
 const rawData = require('./src/rawData')
 
 module.exports = function(controller) {
-    controller.on('welcome_back', async(bot, message) => {
+    controller.hears("Let's Chat!", ["message", "direct_message"], async(bot, message) => {
         const { firstName, openToJob } = rawData.contactInformation
         const jobOpportunity = openToJob ? `I am currently <strong>open</strong> to new career opportunities` : `I am not curently looking for new career opportunities`
         
