@@ -5,7 +5,7 @@
 var converter = new showdown.Converter();
 converter.setOption('openLinksInNewWindow', true);
 
-const player = require('play-sound');
+// const player = require('play-sound');
 
 
 var Botkit = {
@@ -266,9 +266,9 @@ var Botkit = {
             delete (that.next_line);
         }
 
-        player.play('./assets/bubble_pop.mp3', (err) => {
-            if (err) console.log(`Could not play sound: ${err}`);
-        });
+        // player.play('./assets/bubble_pop.mp3', (err) => {
+        //     if (err) console.log(`Could not play sound: ${err}`);
+        // });
     },
     triggerScript: function (script, thread) {
         this.deliverMessage({
