@@ -379,6 +379,10 @@ var Botkit = {
             e.preventDefault();
             that.quickReply(e.target.innerHTML)
             window.scrollTo(0,document.body.scrollHeight);
+            let land = document.getElementsByClassName("minty");
+            setTimeout(() => {
+                land[0].style.display = "none";
+            }, 600)
         })
 
         that.input = document.getElementById('messenger_input');
