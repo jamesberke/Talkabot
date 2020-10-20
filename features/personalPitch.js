@@ -3,9 +3,7 @@ const { personalPitch } = rawData;
 
 module.exports = function (controller) {
 
-    controller.hears('tell me about yourself', ['message', 'direct_message'], async (bot, message) => {
-            const myName = `${firstName} ${lastName}`
-
+    controller.hears('Tell me About Yourself', ['message', 'direct_message'], async (bot, message) => {
 
             await bot.reply(message, { type: 'typing' });
 
