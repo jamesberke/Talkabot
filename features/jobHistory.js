@@ -5,7 +5,7 @@ module.exports = function (controller) {
   const { listOfCompanies } = rawData.jobHistory;
   let jobNames = [...listOfCompanies.map(company => company.companyName)]
   
-  controller.hears(['#JobHistory', async(message) => message.text.toLowerCase().includes("job")], ['message','direct_message'], async function(bot, message) {
+  controller.hears(['#JobHistory', 'Job History', async(message) => message.text.toLowerCase().includes("job")], ['message','direct_message'], async function(bot, message) {
 
     if (listOfCompanies.length === 1) {
       
@@ -14,7 +14,7 @@ module.exports = function (controller) {
       setTimeout(async() => {
         await bot.changeContext(message.reference);
         await bot.reply(message, {
-          text: `${listOfCompanies.map(company => `<div>I have worked at ${company.companyName} 
+          text: `${listOfCompanies.map(company => `<div>I worked at ${company.companyName} 
           as a ${company.jobTitle} from ${company.startDate} to ${company.endDate}.</div>`)}`
         });
         await bot.reply(message, {type: 'typing'});
@@ -31,7 +31,7 @@ module.exports = function (controller) {
       setTimeout(async() => {
         await bot.changeContext(message.reference);
         await bot.reply(message, { 
-          text: `Is there anything else you'd like to learn about me? You can choose between the buttons below or type <strong>#Contact, #Experience, or #TechStack</strong>`,
+          text: `Is there anything else you'd like to learn about me? You can choose between the buttons below or type <strong>#Contact, #Education, or #TechStack</strong>`,
           quick_replies: [
               {
                   title: 'Contact',
@@ -91,7 +91,7 @@ module.exports = function (controller) {
       setTimeout(async() => {
         await bot.changeContext(message.reference);
         await bot.reply(message, { 
-          text: `Is there anything else you'd like to learn about me? You can choose between the buttons below or type <strong>#Contact, #Experience, or #TechStack</strong>`,
+          text: `Is there anything else you'd like to learn about me? You can choose between the buttons below or type <strong>#Contact, #Education, #Projects, or #TechStack</strong>`,
           quick_replies: [
               {
                   title: 'Other Jobs',

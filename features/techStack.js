@@ -89,7 +89,7 @@ module.exports = function (controller) {
           payload: "Let's move on"
         },
         {
-          title: 'other projects',
+          title: 'Other projects',
           payload: 'projects'
         }]
       });

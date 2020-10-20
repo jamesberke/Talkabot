@@ -107,8 +107,14 @@ module.exports = {
     email: 'hkryucr@gmail.com',
     phone: '510-679-9817',
     socialMediaURL: '',
-    portfolioURL: 'hkryucr.github.io',
-    linkedInURL: 'linkedin.com/in/henryryume',
+    portfolioURL: '//hkryucr.github.io',
+    linkedInURL: '//linkedin.com/in/henryryume',
     openToJob: true
+  },
+  personalPitch: {
+    one: 'a',
+    two: 'b',
+    three: 'c',
+    four: 'd'
   }
 }
