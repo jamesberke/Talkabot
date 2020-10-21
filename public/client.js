@@ -86,6 +86,8 @@ var Botkit = {
             channel: this.options.use_sockets ? 'websocket' : 'webhook'
         });
 
+       
+
         this.input.value = '';
 
         this.trigger('sent', message);
@@ -97,6 +99,13 @@ var Botkit = {
             this.socket.send(JSON.stringify(message));
         } else {
             this.webhook(message);
+        }
+
+        if (message.type != 'typing') {
+            const sound = document.getElementsByClassName(
+                "audio-element"
+            )[0];
+            sound.play()
         }
     },
     getHistory: function (guid) {
@@ -266,9 +275,6 @@ var Botkit = {
             delete (that.next_line);
         }
 
-        // player.play('./assets/bubble_pop.mp3', (err) => {
-        //     if (err) console.log(`Could not play sound: ${err}`);
-        // });
     },
     triggerScript: function (script, thread) {
         this.deliverMessage({
@@ -423,11 +429,21 @@ var Botkit = {
         });
 
         that.on('sent', function () {
-            // do something after sending
+            
+
         });
 
         that.on('message', function (message) {
-            // console.log('RECEIVED MESSAGE', message);
+
+            const outgoingMessages = document.getElementsByClassName("outgoing");
+
+            console.log(outgoing);
+            const sound = document.getElementsByClassName(
+                "audio-element"
+            )[0];
+
+            sound.play();
+            
             that.renderMessage(message);
 
         });
