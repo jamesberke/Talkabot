@@ -141,7 +141,7 @@ module.exports = function (controller) {
         },
         {
           title: 'Tell Me About Yourself',
-          payload: 'SelfPitch'
+          payload: 'Tell Me About Yourself'
         }]
       });
     }, 1000);
