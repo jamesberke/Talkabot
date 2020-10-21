@@ -371,8 +371,19 @@ var Botkit = {
                 e.preventDefault()
                 that.quickReply(e.target.innerHTML)
             })
-
         }
+
+        const chatButton = document.getElementsByClassName('chat-button');
+        
+        chatButton[0].addEventListener('click', (e) => {
+            e.preventDefault();
+            that.quickReply(e.target.innerHTML)
+            window.scrollTo(0,document.body.scrollHeight);
+            let land = document.getElementsByClassName("minty");
+            setTimeout(() => {
+                land[0].style.display = "none";
+            }, 600)
+        })
 
         that.input = document.getElementById('messenger_input');
 
@@ -508,4 +519,5 @@ var Botkit = {
     // your page initialization code here
     // the DOM will be available here
     Botkit.boot();
+    window.scrollTo(0, 0);
 })();
