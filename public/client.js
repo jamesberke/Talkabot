@@ -435,9 +435,6 @@ var Botkit = {
 
         that.on('message', function (message) {
 
-            const outgoingMessages = document.getElementsByClassName("outgoing");
-
-            console.log(outgoing);
             const sound = document.getElementsByClassName(
                 "audio-element"
             )[0];
