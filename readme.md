@@ -64,8 +64,8 @@
         </source>
     </audio> 
 ```
-* Inside of Client.js file we call .on('message') to listen for every incoming and outgoing message
-* Then use vanillaJS to grab the audio element and call .play() on it
+* Inside of `Client.js` file we call `.on('message')` to listen for every incoming and outgoing message
+* Then use vanillaJS to grab the audio element and call `.play()` on it
 
 ```
     that.on('message', function (message) {
@@ -79,4 +79,32 @@
         that.renderMessage(message);
 
     });
+```
+
+### Typing Icon
+
+  * Utilized JavaScript's `setTimeout()` function to delay the bot from sending messages instantly
+  * We begin by instantiating a 'typing' message immediately after a question is submitted
+  * setTimeout will not work without the use of `changeContext()`
+  * The first message is delayed for 1 second and after it is sent a new typing icon is loaded in for the next message if there is one
+
+```
+  await bot.reply(message, { type: 'typing' });
+    
+  setTimeout(async () => {
+    await bot.changeContext(message.reference);
+    await bot.reply(message, `Here is the list of <Strong>My Education History</Strong>`);
+    await bot.reply(message, { type: 'typing' });
+  }, 1000)
+
+  setTimeout(async () => {
+    await bot.changeContext(message.reference);
+    await bot.reply(message, {
+      text: `${listOfInsitutions.map(school =>
+        `<div>- <strong>${school.institutionName}:
+      </strong>${school.degree} (${school.startDate.slice(0,4)} - ${school.endDate.slice(0,4)})</div>`)
+        .join('')}`
+    });
+    await bot.reply(message, { type: 'typing' });
+  }, 3000)
 ```
