@@ -5,6 +5,9 @@
 var converter = new showdown.Converter();
 converter.setOption('openLinksInNewWindow', true);
 
+// const player = require('play-sound');
+
+
 var Botkit = {
     config: {
         ws_url: (location.protocol === 'https:' ? 'wss' : 'ws') + '://' + location.host,
@@ -262,6 +265,10 @@ var Botkit = {
         if (!message.isTyping) {
             delete (that.next_line);
         }
+
+        // player.play('./assets/bubble_pop.mp3', (err) => {
+        //     if (err) console.log(`Could not play sound: ${err}`);
+        // });
     },
     triggerScript: function (script, thread) {
         this.deliverMessage({

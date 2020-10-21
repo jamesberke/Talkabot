@@ -1,4 +1,3 @@
-const { BotkitConversation } = require("botkit");
 const rawData = require('./src/rawData')
 const { email, phone, portfolioURL, linkedInURL, firstName, lastName } = rawData.contactInformation;
 
@@ -29,14 +28,14 @@ module.exports = function (controller) {
 
         setTimeout(async () => {
             await bot.changeContext(message.reference);
-            await bot.reply(message, { text: `Portfolio: <Strong><a href='${portfolioURL}' target='_blank'>${portfolioURL}</a></Strong>` });
+            await bot.reply(message, { text: `<div>Portfolio: <a href="${portfolioURL}" target="_blank">${portfolioURL}</a></div>` });
             await bot.reply(message, { type: 'typing' });
         }, 4000);
 
         setTimeout(async () => {
             await bot.changeContext(message.reference);
             await bot.reply(message, {
-                text: `LinkedIn: <Strong><a href='${linkedInURL}' target='_blank'>${linkedInURL}</a></Strong>`,
+                text: `<div>LinkedIn: <a href="${linkedInURL}" target="_blank">${linkedInURL}</a></div>`,
                 quick_replies: [{
                     title: "Let's move on",
                     payload: "Let's move on"

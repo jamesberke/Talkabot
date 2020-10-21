@@ -25,7 +25,7 @@ module.exports = function(controller) {
                 text: `You can learn more about me by clicking one of the buttons below or type <strong>#Contact, #JobHistory, #Education, #TechStack, etc.</strong>`,
                 quick_replies: [
                     {
-                        title: 'Contact',
+                        title: 'Contact Info',
                         payload: 'Contact',
                     },
                     {
@@ -33,12 +33,16 @@ module.exports = function(controller) {
                         payload: 'Education',
                     },
                     {
-                        title: 'JobHistory',
-                        payload: 'JobHistory',
+                        title: 'Job History',
+                        payload: 'Job History',
                     },
                     {
                         title: 'TechStack',
                         payload: 'TechStack',
+                    },
+                    {
+                        title: 'Projects',
+                        payload: 'Projects'
                     }
                 ]
             })

@@ -1,4 +1,3 @@
-const { Botkit, BotkitConversation } = require('botkit');
 const rawData = require('./src/rawData')
 const { listOfInsitutions } = rawData.education;
 
