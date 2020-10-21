@@ -59,26 +59,26 @@
 * Utilized HTML5 <audio> tag to host a short mp3 clip
 
 ```
-    <audio class="audio-element">
-        <source src="./assets/bubble_pop.mp3">
-        </source>
-    </audio> 
+  <audio class="audio-element">
+      <source src="./assets/bubble_pop.mp3">
+      </source>
+  </audio> 
 ```
 * Inside of `Client.js` file we call `.on('message')` to listen for every incoming and outgoing message
 * Then use vanillaJS to grab the audio element and call `.play()` on it
 
 ```
-    that.on('message', function (message) {
+  that.on('message', function (message) {
 
-        const sound = document.getElementsByClassName(
-            "audio-element"
-        )[0];
+      const sound = document.getElementsByClassName(
+          "audio-element"
+      )[0];
 
-        sound.play();
-        
-        that.renderMessage(message);
+      sound.play();
+      
+      that.renderMessage(message);
 
-    });
+  });
 ```
 
 ### Typing Icon
