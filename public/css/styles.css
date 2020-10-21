@@ -15,14 +15,15 @@
   "Noto Color Emoji"
 }
 
-body,
-html {
+html,
+body {
   margin: 0;
   padding: 0;
   font-size: 18px;
   background-color: #FFF;
   font-family: "helvetica", sans-serif;
   scroll-behavior: smooth;
+  overflow-y: hidden;
 }
 .main{
   display: flex;
@@ -425,6 +426,7 @@ a.button:hover {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+
 }
 
 .minty h1 {
