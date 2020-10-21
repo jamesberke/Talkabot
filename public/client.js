@@ -374,7 +374,6 @@ var Botkit = {
         for(let i = 0; i < FAQs.length; i++){
             const li = FAQs[i];
             li.addEventListener('click', (e)=>{
-                console.log('clicked')
                 e.preventDefault()
                 that.quickReply(e.target.innerHTML)
             })

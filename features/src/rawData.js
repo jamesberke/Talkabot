@@ -107,14 +107,14 @@ module.exports = {
     email: 'hkryucr@gmail.com',
     phone: '510-679-9817',
     socialMediaURL: '',
-    portfolioURL: '//hkryucr.github.io',
-    linkedInURL: '//linkedin.com/in/henryryume',
+    portfolioURL: 'https://hkryucr.github.io/henry-ryu/',
+    linkedInURL: 'https://linkedin.com/in/henryryume',
     openToJob: true
   },
   personalPitch: {
-    one: 'a',
-    two: 'b',
-    three: 'c',
-    four: 'd'
+    one: 'As a former competitive gamer, I enjoy needing to use the multitude of team characteristics needed to succeed.',
+    two: 'Trusting your teammates, giving constructive feedback, changing leadership accordingly, and making smart decisions. These are some of the aspects that drew me in to programming, as they share similar characteristics to succeed. ',
+    three: 'I decided to pick up computer science as a minor at University of California, Santa Cruz, after seeing my friends work together on a project.',
+    four: 'The communication and team aspect of programming is what drew me in initially. The satisfaction one gets after seeing the finished product is what made me stay. Now, I am currently working as a frontend developer at Acumen'
   }
 }
