@@ -33,7 +33,7 @@
   * Vibrant colors and bold text draw in user
   * Button press was necessary to manipulate DOM before entering chat allowing us to circumvent the chrome autoplay ban and make notification sound effects for initial message (<---at least 2 hours were lost on this bug)
  
-<!-- Need PIC of landing page final v.![Splash Page](app/assets/images/splash-page.png) -->
+![Landing Page](public/assets/landing.png)
 
 * Dynamic Navbar overview:
   * Talkabot logo doubles as link to landing page and chat reset
@@ -41,7 +41,7 @@
   * Displays name, description, and hotlinks to portfolio and social sites
   * Embedded 'email me' allows users to reach out easier
 
-<!-- Need PIC of navbar final ![Signup Page](app/assets/images/signup-page.png) -->
+![Extended Navbar](public/assets/extendedNavbar.png)
 
 * Chatbot overview:
   * Greets user upon joining the chat 
@@ -51,7 +51,7 @@
   * Every message comes with a non-obtrusive notification sound so you never miss a message
   * Typing icon lets you know another message is coming for the Talkabot
 
-<!-- Need PIC of Chatbot final ![Signin Page](app/assets/images/signin-page.png) -->
+![Main Chat](public/assets/mainChat.png)
 
 
 ### Notifications
