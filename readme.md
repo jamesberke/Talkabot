@@ -114,3 +114,45 @@
 
   }, 3000)
 ```
+
+### Dynamic Tech Stack Render
+
+  * Upon learning the languages and frameworks the talkabot is familiar with, it asks if you would like to see related projects to a specific technology and maps over known technologies to provide quick replies
+  * The controller listens for all known technologies and will output a list of projects related to that technology
+
+```
+  controller.hears(listTechStacks, ['message'], async function (bot, message) {
+    const selectedProjects = listOfProjects.filter(project => project.technologies.includes(message.text))
+
+    await bot.reply(message, { type: 'typing' });
+
+    setTimeout(async () => {
+
+      await bot.changeContext(message.reference);
+      await bot.reply(message, {
+        text: `Here is a list of my related projects`,
+      });
+
+      await bot.reply(message, { type: 'typing' });
+
+    }, 1000);
+    
+    setTimeout(async () => {
+
+      await bot.changeContext(message.reference);
+      await bot.reply(message, {
+        text: `<div>${selectedProjects.map(project => `<div>- <a href="${project.url}" target="_blank">${project.name}</a></div>`).join('')}</div>`,
+        quick_replies: [{
+          title: "Let's move on",
+          payload: "Let's move on"
+        },
+        {
+          title: 'Other projects',
+          payload: 'projects'
+        }]
+      });
+      
+    }, 3000);
+  
+  });
+```
