@@ -122,6 +122,7 @@
 
 ```
 // import and format tech stack data
+  const { listOfProjects } = require('./src/projects')  
   const { listOfLanguages, listOfTechnologies } = rawData.techStack
   const listTechStacks = [...listOfLanguages.map(el => el.name), ...listOfTechnologies.map(el => el.name)]
 
