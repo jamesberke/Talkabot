@@ -22,7 +22,7 @@ module.exports = function(controller) {
         setTimeout(async () => {
             await bot.changeContext(message.reference);
             await bot.reply(message, {
-                text: `You can learn more about me by clicking one of the buttons below or type <strong>#Contact, #JobHistory, #Education, #TechStack, etc.</strong>`,
+                text: `You can learn more about me by clicking one of the buttons below or type <strong>#Contact, #JobHistory, #Education, #TechStack, etc...</strong>`,
                 quick_replies: [
                     {
                         title: 'Contact Info',

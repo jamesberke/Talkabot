@@ -116,5 +116,24 @@ module.exports = {
     two: 'Trusting your teammates, giving constructive feedback, changing leadership accordingly, and making smart decisions. These are some of the aspects that drew me in to programming, as they share similar characteristics to succeed. ',
     three: 'I decided to pick up computer science as a minor at University of California, Santa Cruz, after seeing my friends work together on a project.',
     four: 'The communication and team aspect of programming is what drew me in initially. The satisfaction one gets after seeing the finished product is what made me stay. Now, I am currently working as a frontend developer at Acumen'
+  },
+  hobbies: {
+    one: {
+      title: 'Video Games',
+      description: 'All my life video games have been essential to my life. All of my friends and I spent countless hours together having fun. It eventually grew into a passion for game design that I hope to persue later on in life.'
+    },
+    two: {
+      title: 'Coding',
+      description: "I recently fell in love with writing code and building fun and useful applications. Nothing really compares to the feeling of solving a bug you've been stuck on for hours."
+
+    },
+    three: {
+      title: 'Motorcycles',
+      description: 'I started riding dirtbikes when I was 4 years old. When I was big enough I started racing and continued to until high school. It is my favorite way to spend a day outdoors and the best way to clear my head.'
+    },
+    four: {
+      title: 'Reading',
+      description: 'I have always loved fantasy, science fiction, and adventure novels with never-ending lore. Reading was essential to the development of my imagination, and now I aim to broaden my knowledge with every book I read.'
+    }
   }
 }

@@ -44,6 +44,14 @@ module.exports = function (controller) {
               {
                   title: 'TechStack',
                   payload: 'TechStack',
+              },
+              {
+                  title: 'Projects',
+                  payload: 'Projects',
+              },
+              {
+                  title: 'Hobbies',
+                  payload: 'Hobbies',
               }
           ]
         })
