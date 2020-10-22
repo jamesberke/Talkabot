@@ -92,19 +92,25 @@
   await bot.reply(message, { type: 'typing' });
     
   setTimeout(async () => {
+
     await bot.changeContext(message.reference);
     await bot.reply(message, `Here is the list of <Strong>My Education History</Strong>`);
+
     await bot.reply(message, { type: 'typing' });
+
   }, 1000)
 
   setTimeout(async () => {
+
     await bot.changeContext(message.reference);
     await bot.reply(message, {
       text: `${listOfInsitutions.map(school =>
         `<div>- <strong>${school.institutionName}:
-      </strong>${school.degree} (${school.startDate.slice(0,4)} - ${school.endDate.slice(0,4)})</div>`)
+        </strong>${school.degree} (${school.startDate.slice(0,4)} - ${school.endDate.slice(0,4)})</div>`)
         .join('')}`
     });
+
     await bot.reply(message, { type: 'typing' });
+
   }, 3000)
 ```
