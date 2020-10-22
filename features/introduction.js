@@ -48,5 +48,38 @@ module.exports = function(controller) {
             })
         }, 5000);    
     })
+
+    controller.on('message,direct_message', async(bot, message) => {
+        await bot.reply(message, { type: 'typing' });
+        setTimeout(async () => {
+            await bot.changeContext(message.reference);
+            await bot.reply(message, {
+                    text: "I couldn't understand what you were asking. Try one of the buttons below or type <strong>#Contact, #JobHistory, #Education, #TechStack, etc...</strong>",
+                    quick_replies: [
+                        {
+                            title: 'Contact Info',
+                            payload: 'Contact',
+                        },
+                        {
+                            title: 'Education',
+                            payload: 'Education',
+                        },
+                        {
+                            title: 'Job History',
+                            payload: 'Job History',
+                        },
+                        {
+                            title: 'TechStack',
+                            payload: 'TechStack',
+                        },
+                        {
+                            title: 'Projects',
+                            payload: 'Projects'
+                        }
+                    ]
+                }
+            );
+        }, 1000)
+    });
 }
 
