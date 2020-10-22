@@ -447,6 +447,7 @@ a.button:hover {
   #landing-img-filter {
     width: 51px;
     height: 207px;
+    top: 112px;
   }
 }
 
@@ -473,6 +474,9 @@ a.button:hover {
     margin-right: 10rem;
     max-width: 100vw;
   }
+   #landing-img {
+     width: 850px;
+   }
   #landing-img-filter {
     top: 186px;
     width: 70px;
@@ -497,8 +501,8 @@ a.button:hover {
   align-items: center;
   justify-content: center;
   flex-direction: row;
-  align-items: start;
-  margin-top: 10rem;
+  align-items: center;
+  /* margin-top: 10rem; */
 }
 
 .minty > .container {
@@ -533,6 +537,7 @@ a.button:hover {
 .chat-button {
   border-radius: 20px;
   width: 160px;
+  margin-right: 1rem;
 }
 @media (min-width: 992px) {
   .minty {
