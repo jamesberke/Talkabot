@@ -422,19 +422,37 @@ a.button:hover {
   height: auto;
   padding-top: 3rem;
   padding-bottom: 8rem;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("../assets/people.jpg");
+  flex-direction: column;
+  align-items: center;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
 
 }
 
-.minty h1 {
-  font-size: 4rem;
-  margin: 0;
-  padding: 0;
+.minty > .container {
+  max-width: 1000px;
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 40%;
 }
-
+.minty>.container > h2 {
+  width: 80%;
+}
+.minty>.container>.landing-text {  
+  margin-top: 3rem;
+  width: 85%;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+.minty>.container>a {
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  border-color: none !important;
+}
 @media (min-width: 992px) {
   .minty {
     height: 100vh;
