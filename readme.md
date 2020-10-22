@@ -121,6 +121,12 @@
   * The controller listens for all known technologies and will output a list of projects related to that technology
 
 ```
+// import and format tech stack data
+  const { listOfLanguages, listOfTechnologies } = rawData.techStack
+  const listTechStacks = [...listOfLanguages.map(el => el.name), ...listOfTechnologies.map(el => el.name)]
+
+
+// fetch and render related projects in modules.exports
   controller.hears(listTechStacks, ['message'], async function (bot, message) {
     const selectedProjects = listOfProjects.filter(project => project.technologies.includes(message.text))
 
