@@ -136,8 +136,16 @@ module.exports = function (controller) {
           payload: 'Education'
         },
         {
+          title: 'Projects',
+          payload: 'Projects'
+        },
+        {
           title: 'Contact Info',
           payload: 'Contact'
+        },
+        {
+          title: 'Hobbies',
+          payload: 'Hobbies'
         },
         {
           title: 'Tell Me About Yourself',
