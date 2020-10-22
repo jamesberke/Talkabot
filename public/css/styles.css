@@ -513,7 +513,7 @@ a.button:hover {
   align-items: start;
   flex-direction: column;
   width: 40%;
-  margin-left: 4rem;
+  margin-left: 0;
   margin-right: 0
 }
 .minty>.container > h2 {
