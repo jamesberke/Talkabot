@@ -53,14 +53,53 @@
         <div class="container">
           <h2 class="mb-1">A fun, fast, and interactive way to learn more about your candidate</h2>
           <div class="landing-text">Getting to know your ideal candidates is not a fun process. Talkabot makes it more interactive with an on-line chat conversation via text, in lieu of providing direct contact with a live human agent.</div>
-          <!-- <h3 class="mb-5">
-            <em>A fun, fast, and interactive way to learn more about your candidate</em>
-          </h3> -->
-          <a class="chat-button btn btn-primary btn-xl js-scroll-trigger bg-primary" href="#chat">Let's Chat!</a>
+          <div class="d-flex" style="align-items: flex-end;">
+            <a class="chat-button btn btn-primary btn-xl js-scroll-trigger bg-primary" href="#chat">Let's Chat!</a>
+            <div class="spinner-grow text-primary" role="status" style="margin-left: 3rem;  margin-top: 1rem; width: 8px; height: 8px; margin-left: 0.3rem;">
+              <span class="sr-only">Loading...</span>
+            </div>
+            <div class="spinner-grow text-info" role="status" style=" margin-top: 1rem; width: 8px; height: 8px; margin-left: 0.3rem;">
+              <span class="sr-only">Loading...</span>
+            </div>
+            <div class="spinner-grow text-cyan" role="status" style=" margin-top: 1rem; width: 8px; height: 8px; margin-left: 0.3rem;">
+              <span class="sr-only">Loading...</span>
+            </div>
+            <div class="spinner-grow text-orange" role="status" style=" margin-top: 1rem; width: 8px; height: 8px; margin-left: 0.3rem;">
+              <span class="sr-only">Loading...</span>
+            </div>
+          </div>
+          
+          <!-- Button trigger modal -->
+          <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+            Check Contributors
+          </button> -->
+
+          <!-- Modal -->
+          <!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Contributors</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <div>James Berke</div>
+                  <div>Danny Phan</div>
+                  <div>Henry Ryu</div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+              </div>
+            </div>
+          </div> -->
         </div>
         <div class="row w-50" style="flex-wrap: nowrap; margin-top: 3rem; position: relative;">
           <div id="landing-img-filter" style="position: absolute;z-index: 2;background: white;"></div>
-          <img id="landing-img"src="../assets/chatbot.png" alt="" style="height: auto; margin-top: 1rem;">
+          <img id="landing-img"src="../assets/chatbot.png" alt="" style="height: auto;">
         </div>
       </div>
 
