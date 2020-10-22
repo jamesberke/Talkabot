@@ -502,6 +502,8 @@ a.button:hover {
   justify-content: center;
   flex-direction: row;
   align-items: center;
+  background: linear-gradient(to bottom, #fff 0%, #fff 82%, #d2ecff 101%, #fff 100%);
+  
   /* margin-top: 10rem; */
 }
 
