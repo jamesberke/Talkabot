@@ -392,6 +392,13 @@ var Botkit = {
             that.quickReply(e.target.innerHTML)
             window.scrollTo(0,document.body.scrollHeight);
             let land = document.getElementsByClassName("minty");
+            const navBarDom = document.getElementsByClassName('navbar')[0]
+            navBarDom.classList.remove("bg-primary");
+            navBarDom.classList.add("bg-info");
+            const navHeaderDom = document.getElementById('navbarHeader')
+            navHeaderDom.classList.remove("bg-primary");
+            navHeaderDom.classList.add("bg-info");
+
             setTimeout(() => {
                 land[0].style.display = "none";
             }, 600)

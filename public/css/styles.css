@@ -412,7 +412,81 @@ a.button:hover {
   margin-left: 440px;
 }
 
-/*# sourceMappingURL=styles.css.map */
+#landing-img-filter {
+  width: 51px;
+  height: 119px;
+  top: 130px;
+}
+
+.navbar>.container,
+#navbarHeader>.container {
+  margin-left: 4rem;
+  margin-right: 4rem;
+  max-width: 100vw;
+  top: 0px
+}
+
+#landing-img {
+  width: 550px;
+}
+
+#landing-img-filter {
+  width: 51px;
+  height: 207px;
+}
+@media (min-width: 765px) {
+  .navbar>.container,
+  #navbarHeader>.container {
+    margin-left: 4rem;
+    margin-right: 4rem;
+    max-width: 100vw;
+  }
+  #landing-img {
+     width: 550px;
+  }
+  #landing-img-filter {
+    width: 51px;
+    height: 207px;
+  }
+}
+
+@media (min-width: 992px) {
+  .navbar>.container,
+  #navbarHeader>.container {
+    margin-left: 7rem;
+    margin-right: 7rem;
+    max-width: 100vw;
+  }
+  #landing-img {
+    width: 750px;
+  }
+  #landing-img-filter {
+    top: 171px;
+    width: 50px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .navbar>.container,
+  #navbarHeader>.container {
+    margin-left: 10rem;
+    margin-right: 10rem;
+    max-width: 100vw;
+  }
+  #landing-img-filter {
+    top: 186px;
+    width: 70px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .navbar>.container,
+  #navbarHeader>.container {
+    margin-left: 14rem;
+    margin-right: 16rem;
+    max-width: 100vw;
+  }
+}
 
 .minty {
   min-height: 30rem;
@@ -420,38 +494,45 @@ a.button:hover {
   display: flex;
   width: 100%;
   height: auto;
-  padding-top: 3rem;
-  padding-bottom: 8rem;
-  flex-direction: column;
   align-items: center;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-
+  justify-content: center;
+  flex-direction: row;
+  align-items: start;
+  margin-top: 10rem;
 }
 
 .minty > .container {
-  max-width: 1000px;
+  max-width: 600px;
   margin-top: 3rem;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: start;
+  align-items: start;
   flex-direction: column;
   width: 40%;
+  margin-left: 4rem;
+  margin-right: 0
 }
 .minty>.container > h2 {
   width: 80%;
+  text-align: start;
+  font-weight: 600;
 }
 .minty>.container>.landing-text {  
   margin-top: 3rem;
   width: 85%;
   font-weight: 500;
   margin-bottom: 1.5rem;
+  text-align: start;
+  color: rgb(102, 102, 102);
 }
 .minty>.container>a {
   margin-top: 1rem;
   margin-bottom: 1.5rem;
   border-color: none !important;
+}
+.chat-button {
+  border-radius: 20px;
+  width: 160px;
 }
 @media (min-width: 992px) {
   .minty {
