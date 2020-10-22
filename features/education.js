@@ -39,8 +39,8 @@ module.exports = function (controller) {
           payload: 'App Academy'
         },
         {
-          title: 'City College of San Francisco',
-          payload: 'City College of San Francisco'
+          title: 'University of California, Berkeley',
+          payload: 'University of California, Berkeley'
         },
         {
           title: "Let's move on",
@@ -70,8 +70,8 @@ module.exports = function (controller) {
       await bot.reply(message, {
         text: 'Would you like to learn more?',
         quick_replies: [{
-          title: 'City College of San Francisco',
-          payload: 'City College of San Francisco'
+          title: 'University of California, Berkeley',
+          payload: 'University of California, Berkeley'
         },
         {
           title: "Let's move on",
@@ -84,8 +84,8 @@ module.exports = function (controller) {
 
 // dialogue branch foro City College initial info and main description
 // uses 'no' quick reply as bootleg transition to a menu sequence
-  controller.hears(['City College of San Francisco', 'CCSF', 'City College'], ['message', 'direct_message'], async (bot, message) => {
-    const cityCollege = education.find(school => school.institutionName === 'City College of San Francisco');
+  controller.hears(['University of California, Berkeley', 'CCSF', 'City College'], ['message', 'direct_message'], async (bot, message) => {
+    const cityCollege = education.find(school => school.institutionName === 'University of California, Berkeley');
     const cCreply = cityCollege.description
 
     await bot.reply(message, { type: 'typing' });
@@ -196,8 +196,8 @@ module.exports = function (controller) {
   //           payload: 'App Academy'
   //         },
   //         {
-  //           title: 'City College of San Francisco',
-  //           payload: 'City College of San Francisco'
+  //           title: 'University of California, Berkeley',
+  //           payload: 'University of California, Berkeley'
   //         }]
   //       })
   //     }

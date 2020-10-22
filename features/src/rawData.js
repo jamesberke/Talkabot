@@ -9,9 +9,9 @@ module.exports = {
         endDate: '2020-09-15'
       },
       {
-        companyName: 'apple',
-        jobTitle: 'Software Engineer',
-        jobDescription: 'played with emojis all day',
+        companyName: 'Lyftly',
+        jobTitle: 'Software Engineer Intern',
+        jobDescription: 'designed a feature for the app to visualize self-care improvement.',
         startDate: '2016-05-25',
         endDate: '2017-09-15'
       }
@@ -27,11 +27,11 @@ module.exports = {
         endDate: '2020-04-06'
       },
       {
-        institutionName: 'City College of San Francisco',
-        degree: 'Associates Degree',
-        description: 'lorem ipsum callem lodi',
-        startDate: '2014-08-12',
-        endDate: '2016-05-22'
+        institutionName: 'University of California, Berkeley',
+        degree: 'BA of Psychology, Minor of Computer Science',
+        description: 'The University of California was founded in 1868, born out of a vision in the State Constitution of a university that would "contribute even more than California`s gold to the glory and happiness of advancing generations."',
+        startDate: '2016-09-12',
+        endDate: '2019-06-14'
       }
     ]
   },
