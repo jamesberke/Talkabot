@@ -549,3 +549,10 @@ a.button:hover {
     font-size: 5.5rem;
   }
 }
+
+.sound-on {
+  display: block;
+}
+.sound-off {
+  display: none;
+}

@@ -445,8 +445,10 @@ var Botkit = {
             const sound = document.getElementsByClassName(
                 "audio-element"
             )[0];
-
-            sound.play();
+            const volumnMute = document.getElementById('volumn-mute')
+            if (volumnMute.classList.contains('sound-off')){
+                sound.play();
+            }
             
             that.renderMessage(message);
 
