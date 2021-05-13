@@ -11,7 +11,7 @@ module.exports = {
       {
         companyName: 'Peninsula Parking',
         jobTitle: 'Operations Manager',
-        jobDescription: 'Directed management of 75+ valets, drafted event contracts for customers, and streamlined staffing of events resulting in the company’s most profitable year.',
+        jobDescription: 'Directed management of 75+ valets, automated drafting of event contracts for customers, and streamlined staffing of events resulting in the company’s most profitable year.',
         startDate: '2016-05-25',
         endDate: '2017-09-15'
       }
