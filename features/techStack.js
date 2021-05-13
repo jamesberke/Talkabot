@@ -11,9 +11,6 @@ const listTechStackObjs = [...listOfLanguages.map(el => ({
   payload: el.name
 }))]
 
-
-
-
 module.exports = function (controller) {
   // // use a function to match a condition in the message
   // controller.hears(async (message) => message.text && message.text.toLowerCase() === 'foo', ['message'], async (bot, message) => {
@@ -71,29 +68,48 @@ module.exports = function (controller) {
     const selectedProjects = listOfProjects.filter(project => project.technologies.includes(message.text))
 
     await bot.reply(message, { type: 'typing' });
-
-    setTimeout(async () => {
+    if (selectedProjects.length === 0) {
+      setTimeout(async () => {
       await bot.changeContext(message.reference);
       await bot.reply(message, {
-        text: `Here is a list of my related projects`,
-      })
-      await bot.reply(message, { type: 'typing' });
-    }, 1000);
-    
-    setTimeout(async () => {
-      await bot.changeContext(message.reference);
-      await bot.reply(message, {
-        text: `<div>${selectedProjects.map(project => `<div>- <a href="${project.url}" target="_blank">${project.name}</a></div>`).join('')}</div>`,
+        text: `I don't have a project related to <Strong>${message.text}</Strong>, but I used it extensively at work for the past few years.`,
         quick_replies: [{
-          title: "Let's move on",
-          payload: "Let's move on"
-        },
-        {
-          title: 'Other projects',
-          payload: 'projects'
-        }]
-      });
-    }, 3000);
+            title: "Let's move on",
+            payload: "Let's move on"
+          },
+          {
+            title: 'Other projects',
+            payload: 'projects'
+          }]
+      })
+    }, 1000);
+
+    } 
+    else {
+      setTimeout(async () => {
+        await bot.changeContext(message.reference);
+        await bot.reply(message, {
+          text: `Here is a list of my related projects`,
+        })
+        await bot.reply(message, { type: 'typing' });
+      }, 1000);
+      
+      setTimeout(async () => {
+        await bot.changeContext(message.reference);
+        await bot.reply(message, {
+          text: `<div>${selectedProjects.map(project => `<div>- <a href="${project.url}" target="_blank">${project.name}</a></div>`).join('')}</div>`,
+          quick_replies: [{
+            title: "Let's move on",
+            payload: "Let's move on"
+          },
+          {
+            title: 'Other projects',
+            payload: 'projects'
+          }]
+        });
+      }, 3000);
+    }
+
     
 
   });

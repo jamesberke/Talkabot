@@ -2,16 +2,16 @@ module.exports = {
   jobHistory: {
     listOfCompanies: [
       {
-        companyName: 'Storyworld International',
+        companyName: 'Hack for LA',
         jobTitle: 'Software Engineer',
-        jobDescription: 'Built an interactive dashboard and implemented a fully responsive, device-agnostic front end web page using AngularJS, JavaScript, CSS flexbox, and media queries',
-        startDate: '2020-05-25',
-        endDate: '2020-09-15'
+        jobDescription: 'Deployed fully responsive and devise agnostic end-to-end features from Figma to production on hackforla.org using Javascript, HTML, SCSS, and Docker ',
+        startDate: '2021-04-10',
+        endDate: 'Present'
       },
       {
-        companyName: 'Lyftly',
-        jobTitle: 'Software Engineer Intern',
-        jobDescription: 'designed a feature for the app to visualize self-care improvement.',
+        companyName: 'Peninsula Parking',
+        jobTitle: 'Operations Manager',
+        jobDescription: 'Directed management of 75+ valets, drafted event contracts for customers, and streamlined staffing of events resulting in the company’s most profitable year.',
         startDate: '2016-05-25',
         endDate: '2017-09-15'
       }
@@ -27,11 +27,11 @@ module.exports = {
         endDate: '2020-04-06'
       },
       {
-        institutionName: 'University of California, Berkeley',
-        degree: 'BA of Psychology, Minor of Computer Science',
-        description: 'The University of California was founded in 1868, born out of a vision in the State Constitution of a university that would "contribute even more than California`s gold to the glory and happiness of advancing generations."',
-        startDate: '2016-09-12',
-        endDate: '2019-06-14'
+        institutionName: 'City College of San Francisco',
+        degree: 'AA of Sociology',
+        description: 'Majored in Sociology with a focus on institutional racism and diversity training',
+        startDate: '2015-09-12',
+        endDate: '2017-06-14'
       }
     ]
   },
@@ -43,7 +43,7 @@ module.exports = {
       },
       {
         name: 'Python',
-        yearsCoding: '3'
+        yearsCoding: '1'
       },
       {
         name: 'Ruby',
@@ -51,7 +51,7 @@ module.exports = {
       },
       {
         name: 'SQL',
-        yearsCoding: '3'
+        yearsCoding: '2'
       },
       {
         name: 'HTML',
@@ -72,11 +72,7 @@ module.exports = {
         yearsCoding: '2'
       },
       {
-        name: 'Vue.js',
-        yearsCoding: '1'
-      },
-      {
-        name: 'Angular.js',
+        name: 'GraphQL',
         yearsCoding: '1'
       },
       {
@@ -92,7 +88,7 @@ module.exports = {
         yearsCoding: '2'
       },
       {
-        name: 'Jest.js',
+        name: 'Docker',
         yearsCoding: '1'
       },
       {
@@ -102,25 +98,25 @@ module.exports = {
     ]
   },
   contactInformation: {
-    firstName: 'Henry',
-    lastName: 'Ryu',
-    email: 'hkryucr@gmail.com',
-    phone: '510-679-9817',
-    socialMediaURL: '',
-    portfolioURL: 'https://hkryucr.github.io/henry-ryu/',
-    linkedInURL: 'https://linkedin.com/in/henryryume',
+    firstName: 'James',
+    lastName: 'Berke',
+    email: 'james.berke@gmail.com',
+    phone: '510-912-0845',
+    socialMediaURL: 'https://github.com/jamesberke',
+    portfolioURL: 'https://jamesberke.dev/',
+    linkedInURL: 'https://www.linkedin.com/in/james-berke-33912718a/',
     openToJob: true
   },
   personalPitch: {
-    one: 'As a former competitive gamer, I enjoy needing to use the multitude of team characteristics needed to succeed.',
-    two: 'Trusting your teammates, giving constructive feedback, changing leadership accordingly, and making smart decisions. These are some of the aspects that drew me in to programming, as they share similar characteristics to succeed. ',
-    three: 'I decided to pick up computer science as a minor at University of California, Santa Cruz, after seeing my friends work together on a project.',
-    four: 'The communication and team aspect of programming is what drew me in initially. The satisfaction one gets after seeing the finished product is what made me stay. Now, I am currently working as a frontend developer at Acumen'
+    one: 'As a competetive gamer, I enjoy needing to use the multitude of team characteristics needed to succeed.',
+    two: 'Trusting your teammates, giving constructive feedback, changing leadership accordingly, and making smart decisions in game helped prepare me for the working environment.',
+    three: 'The communication and team aspect of programming is what drew me in initially. The satisfaction one gets after seeing the finished product is what made me stay.',
+    four: 'I am currently a volunteer software engineer at Hack for LA working on their main site and a few smaller projects.'
   },
   hobbies: {
     one: {
       title: 'Video Games',
-      description: 'All my life video games have been essential to my life. All of my friends and I spent countless hours together having fun. It eventually grew into a passion for game design that I hope to persue later on in life.'
+      description: 'All my life video games have been essential to me. My friends and I spent countless hours together having fun. It eventually grew into a passion for game design that I hope to persue later on in life.'
     },
     two: {
       title: 'Coding',
