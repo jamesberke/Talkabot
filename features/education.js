@@ -84,7 +84,7 @@ module.exports = function (controller) {
 
 // dialogue branch foro City College initial info and main description
 // uses 'no' quick reply as bootleg transition to a menu sequence
-  controller.hears(['University of California, Berkeley', 'CCSF', 'City College'], ['message', 'direct_message'], async (bot, message) => {
+  controller.hears(['City College of San Francisco', 'CCSF', 'City College'], ['message', 'direct_message'], async (bot, message) => {
     const cityCollege = education.find(school => school.institutionName === 'City College of San Francisco');
     const cCreply = cityCollege.description
 

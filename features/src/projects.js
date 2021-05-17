@@ -1,14 +1,14 @@
 module.exports = {
   listOfProjects: [
     {
-      name: 'Yocal',
+      name: 'Stack',
       technologies: ['JavaScript', 'Ruby','Ruby on Rails', 'SQL', 'PostgreSQL', 'React.js', 'CSS', 'HTML'],
-      url: 'http://fsp-yocal.herokuapp.com/#/'
+      url: 'http://stack-messaging.herokuapp.com/#/'
     },
     {
-      name: 'Eat Together',
+      name: 'Food Harmony',
       technologies: ['JavaScript', 'Node.js', 'Express.js', 'MongoDB', 'React.js', 'CSS', 'HTML'],
-      url: 'https://lit-atoll-81167.herokuapp.com/#/'
+      url: 'https://food-harmony-sf.herokuapp.com/#/'
     },
     {
       name: '3D Path Finder',
