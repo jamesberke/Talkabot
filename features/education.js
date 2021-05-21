@@ -39,8 +39,8 @@ module.exports = function (controller) {
           payload: 'App Academy'
         },
         {
-          title: 'University of California, Berkeley',
-          payload: 'University of California, Berkeley'
+          title: 'City College of San Francisco',
+          payload: 'City College of San Francisco'
         },
         {
           title: "Let's move on",
@@ -70,8 +70,8 @@ module.exports = function (controller) {
       await bot.reply(message, {
         text: 'Would you like to learn more?',
         quick_replies: [{
-          title: 'University of California, Berkeley',
-          payload: 'University of California, Berkeley'
+          title: 'City College of San Francisco',
+          payload: 'City College of San Francisco'
         },
         {
           title: "Let's move on",
