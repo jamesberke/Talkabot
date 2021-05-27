@@ -104,7 +104,7 @@ module.exports = {
     phone: '510-912-0845',
     socialMediaURL: 'https://github.com/jamesberke',
     portfolioURL: 'https://jamesberke.dev/',
-    linkedInURL: 'https://www.linkedin.com/in/james-berke-33912718a/',
+    linkedInURL: 'https://www.linkedin.com/in/james-berke',
     openToJob: true
   },
   personalPitch: {
